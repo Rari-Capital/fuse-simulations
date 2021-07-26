@@ -19,8 +19,3 @@ jobs:
 
       - name: Build project
         run: nix-shell --run 'dapp build'
-
-      - name: Run simulations
-        run: nix-shell --run 'dapp test'
-        env:
-          ETH_RPC_URL: ${{ secrets.ETH_RPC_URL }}

@@ -42,7 +42,7 @@ make
 ```sh
 # Inside .env
 
-ETH_RPC_URL=https://eth-mainnet.alchemyapi.io/v2/YOUR_ALCHEMY_KEY_HERE # Set this to a valid Ethereum RPC URL.
+ETH_RPC_URL=https://eth-mainnet.alchemyapi.io/v2/YOUR_ALCHEMY_KEY_HERE
 ```
 
 ## Simulating
