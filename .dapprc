@@ -13,19 +13,12 @@ export DAPP_TEST_VERBOSITY=2
 # Fuse Global Admin.
 export DAPP_TEST_ADDRESS=0xa731585ab05fC9f83555cf9Bff8F58ee94e18F85
 
-
 [[ $(pwd) != ~ && -e .env ]] && . .env # Load in the .env file's env vars locally.
 
 export HEVM_RPC=yes # Enable RPC testing.
 export ETH_RPC_URL=$ETH_RPC_URL # Re-export from .env in case they didn't use the export keyword.
-export DAPP_TEST_ADDRESS=$DAPP_TEST_ADDRESS
 
 if [[ $ETH_RPC_URL != https* ]] # If the ETH_RPC_URL doesn't start with https, alert the user:
 then
     echo -e "${RED}You need to create an ${GREEN}.env${RED} file that sets ${GREEN}ETH_RPC_URL${RED} to a valid Ethereum RPC URL to start testing.${NO_COLOR}"
-fi
-
-if [[ $DAPP_TEST_ADDRESS != 0x* ]] # If the DAPP_TEST_ADDRESS doesn't start with 0x, alert the user:
-then
-    echo -e "${RED}You need to create an ${GREEN}.env${RED} file that sets ${GREEN}DAPP_TEST_ADDRESS${RED} to a valid Ethereum address to start testing.${NO_COLOR}"
 fi
